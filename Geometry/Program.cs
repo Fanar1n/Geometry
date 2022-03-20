@@ -24,8 +24,8 @@ namespace Geometry
 
         static string[,] Game(int numberMoves, string[,] array)
         {
-            int firstPlayerMoves = 4; //numberMoves;
-            int secondPlayerMoves = 4; // numberMoves;
+            int firstPlayerMoves = numberMoves;
+            int secondPlayerMoves = numberMoves;
             for (int allMoves = numberMoves; allMoves > 0; allMoves--)
             {
                 CheckFullField(array);
