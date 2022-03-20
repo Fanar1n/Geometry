@@ -104,16 +104,6 @@ namespace Geometry
 
             }
             return false;
-            //if (check == false)
-            //{
-            //    count++;
-            //    CheckField(check);
-            //}
-
-            //if (count == 2)
-            //{
-            //    Console.WriteLine("Переход хода");
-            //}
         }
 
 
@@ -170,8 +160,9 @@ namespace Geometry
         {
         check:
             Console.WriteLine("Введите точки, с которых хотите отрисовать фигуру: ");
-
+            Console.WriteLine("Введите координату Y:");
             int CoordinateX = GetCoordinateX(array);
+            Console.WriteLine("Введите координату X:");
             int CoordinateY = GetCoordinateY(array);
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -239,24 +230,24 @@ namespace Geometry
 
         static int GetX()
         {
-            Console.WriteLine("Введите длину(X) поля, не меньше 20: ");
+            Console.WriteLine("Введите высоту поля, не меньше 20: ");
             int number = 0;
 
             while (!int.TryParse(Console.ReadLine(), out number) || number <= 19)
             {
-                Console.WriteLine("Некорректное значение X, повторите ввод:");
+                Console.WriteLine("Некорректное значение высоты, повторите ввод:");
             }
 
             return number;
         }
         static int GetY()
         {
-            Console.WriteLine("Введите ширину(Y) поля, не меньше 30: ");
+            Console.WriteLine("Введите ширину поля, не меньше 30: ");
             int number = 0;
 
             while (!int.TryParse(Console.ReadLine(), out number) || number <= 29)
             {
-                Console.WriteLine("Некорректное значение Y, повторите ввод:");
+                Console.WriteLine("Некорректное значение ширины, повторите ввод:");
             }
 
             return number;
@@ -264,8 +255,8 @@ namespace Geometry
 
         static string[,] FillField()
         {
-            int X = 5; //GetX();
-            int Y = 5; //GetY();
+            int X = GetX();
+            int Y = GetY();
             string[,] array = new string[X, Y];
 
             for (int i = 0; i < array.GetLength(0); i++)
